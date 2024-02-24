@@ -1,6 +1,8 @@
 #pragma once
 #include "Header.h"
 
+namespace pho {
+
 class Phone_List {
 
 public:
@@ -225,4 +227,5 @@ public:
 	}
 
 };
+}
 

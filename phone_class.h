@@ -5,12 +5,24 @@ namespace pho {
 
 class Phone_List {
 
+private:
+	std::string name = "";
+	std::string number = "";
+	std::list<std::string> list;
 public:
 
-	std::string name = " ";
-	std::string number = "";
+	std::string Opname = "";
+	std::string Opnumber = "";
+	std::list<std::string> Oplist;
 
-	std::list<std::string> list;
+
+	Phone_List() {
+		name = Opname;
+		number = Opnumber;
+		list = Oplist;
+	}
+
+
 
 	void add()
 	{
@@ -160,7 +172,7 @@ public:
 
 	void show()
 	{
-		static int count = 0;
+		static int count = 1;
 		if (list.empty())
 		{
 			std::cout << "Список пуст!";
@@ -168,7 +180,14 @@ public:
 		else {
 			for (auto iter = list.begin(); iter != list.end(); iter++)
 			{
-				std::cout << ++count << "\n";
+				if ((count % 2) == 0)
+				{
+					++count;
+					std::cout << *iter << "\n";					
+					continue;
+				}
+				++count;
+				std::cout << "***************************" << "\n";
 				std::cout << *iter << "\t";
 				std::cout << "\n";
 			}
